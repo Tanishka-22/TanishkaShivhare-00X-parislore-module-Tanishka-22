@@ -23,6 +23,7 @@ const SubmitForm = () => {
     if (result.success) {
       setSubmitted(true);
       setError("");
+      setFormData({ name: "", email: "", title: "", body: "" }); // Clear form fields
     }
   };
 
