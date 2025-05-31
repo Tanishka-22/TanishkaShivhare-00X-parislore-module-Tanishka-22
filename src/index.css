@@ -8,3 +8,7 @@ body {
   background-blend-mode:multiply;
 }
 
+#logotext{
+  font-size: 25px;
+  color: #E91E63;
+}
