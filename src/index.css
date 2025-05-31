@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#FFFFF0];
+  /* @apply bg-[#FFFFF0]; */
+  background-image: url('../public/background2.png');
+  background-blend-mode:multiply;
 }
 

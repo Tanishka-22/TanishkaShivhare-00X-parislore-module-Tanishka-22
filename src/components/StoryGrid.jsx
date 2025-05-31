@@ -10,14 +10,14 @@ const CarouselIcon = () => (
 );
 
 const StoryGrid = () => {
-  const [view, setView] = useState("grid");
-  const [focusIdx, setFocusIdx] = useState(0);
+  const [view, setView] = useState("carousel"); 
+    const [focusIdx, setFocusIdx] = useState(0);
 
   const handlePrev = () => setFocusIdx((prev) => (prev === 0 ? storiesData.length - 1 : prev - 1));
   const handleNext = () => setFocusIdx((prev) => (prev === storiesData.length - 1 ? 0 : prev + 1));
 
   return (
-    <section className="bg-[#fafafa] py-12 px-6 md:px-12 relative">
+    <section className="py-12 px-6 md:px-12 relative" id="grid">
       {/* Toggle View Icon */}
       <button
         className="absolute right-6 top-6 z-10 bg-white rounded-full shadow p-2 hover:bg-pink-50 transition"
@@ -43,7 +43,7 @@ const StoryGrid = () => {
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="mx-2 text-3xl font-bold text-gray-400 hover:text-pink-500 focus:outline-none"
+            className="mx-2 text-3xl font-bold text-gray-600 hover:text-pink-500 focus:outline-none"
             aria-label="Previous story"
             style={{ height: 340 }}
           >
@@ -57,7 +57,7 @@ const StoryGrid = () => {
               return (
                 <div
                   key={idx}
-                  className={`rounded-xl border border-gray-200 bg-white p-4
+                  className={`group rounded-xl border border-gray-200 bg-white p-4
                     ${isFocused ? "scale-110 z-10 shadow-lg" : "scale-90 opacity-70"}
                     transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]`}
                   style={{
@@ -76,7 +76,9 @@ const StoryGrid = () => {
                   />
                   <h3 className="font-playfair text-lg text-gray-900 mb-1">{storiesData[idx].title}</h3>
                   <p className="font-lora text-sm text-gray-700 mb-3">{storiesData[idx].snippet}</p>
-                  <button className="bg-gray-100 text-gray-800 text-sm font-medium px-4 py-1 rounded-md hover:bg-gray-200 transition-colors duration-300">Read Story</button>
+                  <button className="bg-gray-300 text-gray-800 text-sm font-medium px-4 py-1 rounded-md hover:bg-gray-200 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Read Story
+                  </button>
                 </div>
               );
             })}
@@ -84,7 +86,7 @@ const StoryGrid = () => {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="mx-2 text-3xl font-bold text-gray-400 hover:text-pink-500 focus:outline-none"
+            className="mx-2 text-3xl font-bold text-gray-600 hover:text-pink-500 focus:outline-none"
             aria-label="Next story"
             style={{ height: 340 }}
           >

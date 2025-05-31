@@ -4,7 +4,7 @@ import StoryGrid from "./components/StoryGrid";
 import SubmitForm from "./components/SubmitForm";
 
 const App = () => (
-  <div className="font-lora main-page text-[#424242]">
+  <div className="font-lora main-page text-[#424242]" id="main">
     <Header />
     <main>
       <StoryGrid />
